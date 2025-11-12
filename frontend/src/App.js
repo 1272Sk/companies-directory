@@ -25,7 +25,7 @@ const App = () => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('http://localhost:5000/api/companies');
+      const response = await fetch('https://companies-directory-c53q.onrender.com/api/companies');
       
       if (!response.ok) {
         throw new Error('Failed to fetch companies');
@@ -50,7 +50,7 @@ const App = () => {
   const handleRefresh = async () => {
     try {
       setRefreshing(true);
-      await fetch('http://localhost:5000/api/companies/refresh', { method: 'POST' });
+      await fetch('https://companies-directory-c53q.onrender.com/api/companies/refresh', { method: 'POST' });
       await fetchCompanies();
     } catch (err) {
       console.error('Error refreshing:', err);
