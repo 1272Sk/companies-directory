@@ -1,17 +1,11 @@
 // server.js - Complete Backend with Real Company Data
-import dotenv from "dotenv";
-dotenv.config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
-app.use(cors({
-  origin: '*', // Allow all origins for now
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 
 // Cache to avoid repeated API calls
